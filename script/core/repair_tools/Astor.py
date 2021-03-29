@@ -165,6 +165,11 @@ def jkali_init(args):
 def jMutRepair_init(args):
     return init(args, "jMutRepair", "jMutRepair")
 
+def figra_init(args):
+    args.parameters += ":maxCombinationVariableLimit:true:maxVarCombination:1000"
+    args.stopfirst = False
+    return init(args, "Figra", "figra")
+
 def astor_args(parser):
     parser.add_argument("--seed", help="The random seed", default=0, type=int)
     parser.add_argument("--maxtime", help="Astor timeout", default=120, type=int)
@@ -190,4 +195,7 @@ parser = add_repair_tool("jMutRepair", jMutRepair_init, 'Repair the bug with jMu
 astor_args(parser)
 
 parser = add_repair_tool("Cardumen", cardumen_init, 'Repair the bug with Cardumen')
+astor_args(parser)
+
+parser = add_repair_tool("Figra", figra_init, 'Repair the bug with Figra')
 astor_args(parser)
