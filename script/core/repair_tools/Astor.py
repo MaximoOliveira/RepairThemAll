@@ -176,7 +176,7 @@ def astor_args(parser):
     parser.add_argument("--population", help="Astor population", default=1, type=int)
     parser.add_argument("--maxgen", help="Astor maxgen", default=1000000, type=int)
     parser.add_argument("--scope", "-s", help="The scope of the ingredients", choices=("local", "package", "global"),
-                        default="local")
+                        default="package")
     parser.add_argument("--parameters", "-p", help="Astor parameters", default="x:x")
     parser.add_argument("--dontstopfirst", help="Don't stop after the first bug",
                         action='store_false',
