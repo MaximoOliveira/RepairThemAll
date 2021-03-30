@@ -82,12 +82,10 @@ mvn -Dhttps.protocols=TLSv1.2 install -DskipTests
 cd ..
 rm -rf project-info-maven-plugin
 
-if [ ! -d libs/z3 ]; then
-    cd libs/z3
-    mkdir -p ../z3_bin
-    python scripts/mk_make.py --java --prefix=../z3_bin
-    cd build
-    make
-    #make install
-    cd ../../
-fi
+cd libs/z3
+mkdir -p ../z3_bin
+python scripts/mk_make.py --java --prefix=../z3_bin
+cd build
+make
+#make install
+cd ../../
