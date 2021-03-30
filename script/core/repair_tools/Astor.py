@@ -167,7 +167,7 @@ def jMutRepair_init(args):
 
 def figra_init(args):
     args.parameters += ":maxCombinationVariableLimit:true:maxVarCombination:1000"
-    args.stopfirst = False
+    args.stopfirst =False
     return init(args, "Figra", "figra")
 
 def astor_args(parser):
